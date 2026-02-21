@@ -24,7 +24,7 @@ jobs:
         uses: docker/login-action@v1  # log in to Docker Hub
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}  # use Docker Hub username from secrets
-          password: ${{ secrets.DOCKERHUB_PASSWORD }}  # use Docker Hub password from secrets
+          password: ${{ secrets.DOCKERHUB_TOKEN }}  # use Docker Hub password from secrets
 
       - name: Build Docker image
         run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/java-docker-app:latest .  # build the Docker image and tag it
